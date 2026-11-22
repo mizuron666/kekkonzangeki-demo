@@ -95,14 +95,6 @@ body {
 <style>
 html,body { overscroll-behavior: none; background: #10181d; }
 #canvas { touch-action: none; }
-#landscape-notice { display: none; }
-@media (pointer: coarse) and (orientation: portrait) {
-  #landscape-notice {
-    display: grid; place-items: center; position: fixed; inset: 0; z-index: 999;
-    padding: 24px; background: #10181d; color: #f0e6d2;
-    text-align: center; font: 18px system-ui, sans-serif;
-  }
-}
 </style>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -112,10 +104,6 @@ document.addEventListener('DOMContentLoaded', function () {
   probe.setAttribute('aria-hidden', 'true');
   probe.style.cssText = 'position:fixed;visibility:hidden;pointer-events:none;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)';
   document.body.append(probe);
-  const notice = document.createElement('div');
-  notice.id = 'landscape-notice';
-  notice.textContent = '端末を横向きにするとプレイできます。';
-  document.body.append(notice);
   window.kekkonmetrics = function () {
     const style = getComputedStyle(probe);
     const left = parseFloat(style.paddingLeft) || 0;
@@ -144,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":36210812,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":36212204,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
